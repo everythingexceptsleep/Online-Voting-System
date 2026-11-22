@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Voting System (Demo)</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>&#128499; Online Voting System</h1>
+        <p>Class Representative Election 2026</p>
+    </header>
+
+    <div class="demo-note">
+        &#9888; This is a demo made for a college project. Votes are saved only in this browser. Not for real elections.
+    </div>
+
+    <div class="container">
+
+        <!-- voting form -->
+        <div class="box" id="voteBox">
+            <h2>Cast Your Vote</h2>
+
+            <div class="voter">
+                <div>
+                    <label>Your Name</label>
+                    <input type="text" id="voterName" maxlength="30" placeholder="eg. Rahul Sharma">
+                </div>
+                <div>
+                    <label>Roll Number</label>
+                    <input type="text" id="rollNo" maxlength="15" placeholder="eg. 23BCS045">
+                </div>
+            </div>
+
+            <h3>Select a candidate</h3>
+            <div id="candidates" class="candidates"></div>
+
+            <button class="vote-btn" onclick="castVote()">Cast Vote</button>
+            <p id="msg"></p>
+        </div>
+
+        <!-- shown after voting -->
+        <div class="box done hidden" id="doneBox">
+            <div class="tick">&#10004;</div>
+            <h2>Thank you for voting!</h2>
+            <p id="voteDetails"></p>
+            <p class="small">Only one vote is allowed from this browser.</p>
+        </div>
+
+        <!-- results -->
+        <div class="box">
+            <h2>Live Results</h2>
+            <p id="totalVotes" class="small"></p>
+            <div id="results"></div>
+            <p id="leader" class="leader"></p>
+        </div>
+
+        <!-- admin -->
+        <div class="box admin">
+            <h3>Admin (for demo)</h3>
+            <p class="small">Use this to let the next person vote on the same computer, or to start the demo again.</p>
+            <input type="password" id="adminPass" placeholder="Admin password">
+            <div class="admin-btns">
+                <button onclick="nextVoter()">Allow Next Voter</button>
+                <button class="red" onclick="resetAll()">Reset All Votes</button>
+            </div>
+            <p id="adminMsg"></p>
+        </div>
+
+    </div>
+
+    <footer>Made by Piyush Kumar</footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
